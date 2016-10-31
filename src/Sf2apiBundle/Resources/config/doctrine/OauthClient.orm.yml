@@ -1,0 +1,12 @@
+Sf2apiBundle\Entity\OauthClient:
+    type: entity
+    table: oauthclient
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    lifecycleCallbacks: {  }

@@ -1,0 +1,23 @@
+Sf2apiBundle\Entity\AuthCode:
+    type: entity
+    table: authcode
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        client:
+            type: smallint
+            nullable: false
+            unsigned: true
+            column: client_id  
+        user:
+            type: smallint
+            nullable: false
+            unsigned: true
+            column: user_id             
+    lifecycleCallbacks: {  }

@@ -1,0 +1,9 @@
+{% extends 'Sf2apiBundle::base.html.twig' %}
+
+{% block body %}
+    <h1>Note list</h1>
+    {% for note in notes %}
+        {{ note.id }} : {{ note.title }} </br>
+
+    {% endfor %}
+{% endblock %}

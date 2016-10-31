@@ -1,0 +1,33 @@
+Sf2apiBundle\Entity\User:
+    type: entity
+    table: users
+    uniqueConstraints:
+        email:
+            columns:
+                - email
+    id:
+        id:
+            type: bigint
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 64
+            fixed: false
+        email:
+            type: string
+            nullable: false
+            length: 128
+            fixed: false
+        password:
+            type: string
+            nullable: false
+            length: 128
+            fixed: false
+            default: ''
+    lifecycleCallbacks: {  }

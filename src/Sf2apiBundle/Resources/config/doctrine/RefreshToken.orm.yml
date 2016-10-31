@@ -1,0 +1,23 @@
+Sf2apiBundle\Entity\RefreshToken:
+    type: entity
+    table: refresh_token
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        client:
+            targetEntity: OauthClient        
+            joinColumn:
+              name: client_id
+              referencedColumnName: id
+        user:
+            targetEntity: Sf2apiBundle\Entity\User           
+            joinColumn:
+              name: user_id
+              referencedColumnName: id             
+    lifecycleCallbacks: {  }

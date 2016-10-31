@@ -1,0 +1,20 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+# doctrine.orm.entity_manager
+parameters:
+    platform.entity.user.class: Sf2apiBundle\Entity\User
+    platform.user.provider.class: Sf2apiBundle\Provider\UserProvider
+
+services:
+    platform.user.repository:
+        class: Sf2apiBundle\Repository\UserRepository
+        factory: [@doctrine, getRepository]
+        arguments: 
+            - %platform.entity.user.class%
+    
+    platform.user.provider:
+        class: Sf2apiBundle\Provider\UserProvider
+        arguments: [@platform.user.repository]
+        
+    Sf2_password_encoder:
+        class: Sf2apiBundle\Services\Sf2PasswordEncoder

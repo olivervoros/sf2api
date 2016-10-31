@@ -1,0 +1,4 @@
+notes : 
+  type: rest
+  resource:     "Sf2apiBundle:Note"
+  name_prefix:  sf2api_notes_  
